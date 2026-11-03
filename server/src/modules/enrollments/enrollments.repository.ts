@@ -6,6 +6,11 @@ export interface Enrollment {
   enrolledAt: Date;
 }
 
+export class EnrollmentRepository {
+  
+
+}
+
 export class PgEnrollmentRepository {
 
   async create(studentRa: number, courseId: number) {

@@ -5,6 +5,11 @@ export interface Course {
   name: string;
 }
 
+export class CourseRepository {
+  
+
+}
+
 export class PgCourseRepository {
 
   async create(data: { name: string }) {

@@ -1,18 +1,11 @@
 import { Router } from "express";
 import { parseId } from "../../validation";
 import { EnrollmentsService } from "./enrollments.service";
+import { studentsRoutes } from "../students/students.routes";
 
 export function enrollmentsRoutes() {
   const service = new EnrollmentsService();
   const router = Router();
-
-  router.get("/", async (_req, res) => {
-    res.json(await service.findAll());
-  });
-
-  router.post("/", async (req, res) => {
-    res.status(201).json(await service.create(req.body));
-  });
 
   router.get("/student/:studentRa/course/:courseId", async (req, res) => {
     res.json(
