@@ -1,10 +1,8 @@
 import { Router } from "express";
 import { parseId } from "../../validation";
-import { EnrollmentsService } from "./enrollments.service";
-import { studentsRoutes } from "../students/students.routes";
+import type { EnrollmentsService } from "./enrollments.service";
 
-export function enrollmentsRoutes() {
-  const service = new EnrollmentsService();
+export function enrollmentsRoutes(service: EnrollmentsService) {
   const router = Router();
 
   router.get("/student/:studentRa/course/:courseId", async (req, res) => {
@@ -16,6 +14,5 @@ export function enrollmentsRoutes() {
     );
   });
 
-  
   return router;
 }
